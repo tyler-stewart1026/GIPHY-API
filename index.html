@@ -6,10 +6,15 @@
     <title>Movie GIPHY Search</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="./assets/css/stylesheet.css">
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/clapper-board.png">
 </head>
 
 <body>
@@ -21,8 +26,12 @@
             <div class="col-md-12">
                 <form>
                     <div class="form-group">
-                        <label for="searchBar">Search a movie!</label>
-                        <input type="text" class="form-control" id="searchBar" placeholder="Search...">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="searchBar">Search a movie!</label>
+                                <input type="text" class="form-control" id="searchBar" placeholder="Search...">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -30,11 +39,20 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 gifArea">
                 Gifs go here.
             </div>
-            <div class="col-md-3">
-                Buttons go over here.
+            <div class="col-md-3 movButtons">
+                <p class="movies">Movies</p>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
+                <button type="input">button</button>
             </div>
         </div>
     </div>

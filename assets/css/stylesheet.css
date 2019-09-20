@@ -1,7 +1,17 @@
 body {
     font-family: 'Cinzel', serif;
+    color: white;
+    background-color: black;
 }
 
 h1 {
     text-align: center;
+}
+
+.movButtons {
+    text-align: center;
+}
+
+.movies {
+    border-bottom: solid white 2px;
 }
