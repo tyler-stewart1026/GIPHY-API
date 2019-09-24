@@ -28,7 +28,7 @@ function displayGifs() {
 
     var topicID = $('.topic').click(function () {
         var item = $(this).attr('data-name');
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + item + "&limit=8&rating=g&api_key=zeDT6SboXDp0gp0a6v5WKywQmmGLZuyS"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + item + "&limit=8&rating=g&api_key=zeDT6SboXDp0gp0a6v5WKywQmmGLZuyS";
 
         $.ajax({
             url: queryURL,
@@ -36,16 +36,17 @@ function displayGifs() {
         }).then(function (response) {
             console.log(response);
             var results = (response.data)
+            console.log(results);
             for (i = 0; i < results.length; i++) {
                 var gifDiv = $('<div>');
                 var rating = results[i].rating;
+                console.log(results[i].rating);
                 var p = $('<p>').text("Rating: " + rating);
                 var image = $('<img>');
-                image.attr('src', results[i].images.fixed_height.url);
-
+                image.attr({ 'src': results[i].images.fixed_height_still.url, 'data-state': "still", 'data-still': results[i].images.fixed_height_still.url, 'data-animate': results[i].images.fixed_height.url, class: "gif" });
                 gifDiv.prepend(p);
                 gifDiv.prepend(image);
-                $('gifArea').prepend(gifDiv);
+                $('.gifArea').prepend(gifDiv);
             }
         })
     });
@@ -64,6 +65,21 @@ $('.searchbtn').on("click", function () {
     makeBtns();
     $('#searchBar').val("");
 });
+
+
+// PlayPause 
+$('.gifArea').on('click', '.gif', function (){
+    var state = $(this).attr('data-state');
+    console.log(state);
+
+    if (state === "still") {
+        $(this).attr('src', $(this).attr('data-animate'));
+        $(this).attr('data-state', 'animate'); 
+    } else {
+        $(this).attr('src', $(this).attr('data-still'));
+        $(this).attr('data-state', 'still');
+    }
+})
 
 // TO DO: 
 // ========================================================================================================
