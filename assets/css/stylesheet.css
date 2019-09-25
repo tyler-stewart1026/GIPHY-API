@@ -1,4 +1,4 @@
-/* body {
+body {
     font-family: 'Merriweather', serif;
     color: white;
     background-color: black;
@@ -12,6 +12,8 @@ h1 {
     text-align: center;
 }
 
+
+
 .cats {
     border-bottom: solid white 2px;
-} */
+}

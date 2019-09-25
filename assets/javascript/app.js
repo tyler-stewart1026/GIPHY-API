@@ -11,7 +11,7 @@ function makeBtns() {
     for (var i = 0; i < topics.length; i++) {
         console.log(topics[i]);
         // var that holds buttons
-        var catBtn = $('<button>')
+        var catBtn = $('<button class="btn btn-primary btn-block">')
         // add class, attribute, and text to buttons
         catBtn.addClass('topic');
         catBtn.text(topics[i]);
@@ -26,7 +26,7 @@ makeBtns();
 // function to display the gifs
 function displayGifs() {
 
-    var topicID = $('.topic').click(function () {
+    $('.topic').click(function () {
         var item = $(this).attr('data-name');
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + item + "&limit=8&rating=g&api_key=zeDT6SboXDp0gp0a6v5WKywQmmGLZuyS";
 
@@ -64,6 +64,7 @@ $('.searchbtn').on("click", function () {
     console.log(topics);
     makeBtns();
     $('#searchBar').val("");
+    displayGifs();
 });
 
 
@@ -81,6 +82,3 @@ $('.gifArea').on('click', '.gif', function (){
     }
 })
 
-// TO DO: 
-// ========================================================================================================
-// create click event to register our search box to search variable, push new button up to topic array and rerun make button function
